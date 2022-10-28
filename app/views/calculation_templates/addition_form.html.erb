@@ -9,3 +9,7 @@
 
   <button>Add!</button>
 </form>
+
+<% if cookies["most_recent_addition"] != nil %>
+  <p>Last Addition Result: <%= cookies["most_recent_addition"] %></p>
+<% end %>

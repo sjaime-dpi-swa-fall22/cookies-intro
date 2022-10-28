@@ -9,3 +9,7 @@
 
   <button>Subtract!</button>
 </form>
+
+<% if cookies["most_recent_subtraction"] != nil %>
+  <p>Last Subtraction Result: <%= cookies["most_recent_subtraction"] %></p>
+<% end %>

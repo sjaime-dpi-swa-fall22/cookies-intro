@@ -21,6 +21,8 @@ class CalculationsController < ApplicationController
 
     @result = @first_number.to_f + @second_number.to_f
 
+    cookies.store(:most_recent_addition, @result)
+
     render({ :template => "calculation_templates/add_results.html.erb" })
   end
 
@@ -29,6 +31,8 @@ class CalculationsController < ApplicationController
     @second_number = params.fetch("second_num").to_f
 
     @result =  @second_number.to_f - @first_number.to_f
+
+    cookies.store(:most_recent_subtraction, @result)
 
     render({ :template => "calculation_templates/subtract_results.html.erb" })
   end
